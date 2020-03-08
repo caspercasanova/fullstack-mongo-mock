@@ -12,19 +12,22 @@ const controller = {
   post: (req, res) => {
     let products = req.body
     console.log(products)
-    helper.postProductsHelper()
-    .then(() => res.status(200).send('Product Has Been Posted'))
+    helper.postProductsHelper(products)
+    .then((prod) => res.status(200).send(prod))
     .catch(err => res.status(400).send(err))
   },
   put: (req, res) => {
-    helper.updateProductHelper()
+    let _id = req.params
+    let updatedProd = req.body
+    console.log(_id, updatedProd)
+    helper.updateProductHelper({_id}, updatedProd)
     .then(res.status(200).send('We Succeeded Updated'))
     .catch(err => res.status(400).send(err))
   },
   delete: (req, res) => {
 
-
-    helper.deleteProductHelper()
+    let _id = req.params
+    helper.deleteProductHelper({_id})
     .then(() => res.status(200).send('We Deleted The Shit'))
     .catch(err => res.status(400).send(err))
 
