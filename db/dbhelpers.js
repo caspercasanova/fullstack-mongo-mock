@@ -3,8 +3,8 @@ var Product = require('./');
 var helpers = {
   getProductsHelper: () => Product.find({}),
   postProductsHelper: (products) => Product.insertMany(products),
-  updateProductHelper: (id, newProd) => Product.updateOne(newProd, id),
-  deleteProductHelper: (id) => Product.deleteOne(id)
+  updateProductHelper: (newProd, _id) => Product.updateOne( _id, newProd),
+  deleteProductHelper: (_id) => Product.deleteOne(_id)
 };
 
 module.exports = helpers

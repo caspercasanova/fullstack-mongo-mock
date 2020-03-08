@@ -19,14 +19,15 @@ const controller = {
   put: (req, res) => {
     let _id = req.params
     let updatedProd = req.body
-    console.log(_id, updatedProd)
-    helper.updateProductHelper({_id}, updatedProd)
+    console.log(_id)
+    helper.updateProductHelper(updatedProd, _id)
     .then(res.status(200).send('We Succeeded Updated'))
     .catch(err => res.status(400).send(err))
   },
   delete: (req, res) => {
 
     let _id = req.params
+
     helper.deleteProductHelper({_id})
     .then(() => res.status(200).send('We Deleted The Shit'))
     .catch(err => res.status(400).send(err))
