@@ -1,8 +1,9 @@
 import React from 'react';
-  
-const Products = () => {
+
+const Products = (props) => {
    return(
-    <div className='product-list-entry'>
+    <div className='product-list-entry' onClick={()=>props.changeProd(props.indexNum)}>
+      <img src={props.imgSrc} className='listimages'></img>
     </div>
   )
 }

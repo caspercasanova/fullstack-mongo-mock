@@ -12,7 +12,7 @@ const server = express();
 
 
 server.use(cors())
-
+//server.options('*', cors())
 server.use(morgan())
 
 // check the implementation of this

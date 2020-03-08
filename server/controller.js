@@ -19,7 +19,7 @@ const controller = {
   put: (req, res) => {
     let _id = req.params
     let updatedProd = req.body
-    console.log(_id)
+    console.log(_id, updatedProd)
     helper.updateProductHelper(updatedProd, _id)
     .then(res.status(200).send('We Succeeded Updated'))
     .catch(err => res.status(400).send(err))
