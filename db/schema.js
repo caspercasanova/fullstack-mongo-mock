@@ -6,8 +6,6 @@ var productSchema= mongoose.Schema ({
   curr_bid: Number,
   ends_in: Number,
   image: String
-
-
 });
 
  /*

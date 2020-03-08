@@ -19,7 +19,7 @@ const createProduct = () => {
   // don't worry too much if some images load while the others don't.
   // it's probably not your fault
   product.image = `http://lorempixel.com/400/400/technics/${Math.ceil(Math.random() * Math.ceil(10))}`;
-  return product
+  console.log(JSON.stringify(product))
 };
 
 const createProducts = () => {
@@ -44,4 +44,5 @@ const insertMockData = function() {
 // server code - it is meant to only be run once so that
 // you have access to data to work with
 
-insertMockData()
+//insertMockData()
+//createProduct()
